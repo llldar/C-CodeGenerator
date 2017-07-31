@@ -144,7 +144,7 @@ void register_allocate(node root)
         }else if(root.values[0].front() == 'p' && is_number(root.values[0].substr(4,root.values[0].length()))){
             //parameters
             std::string num = root.values[0].substr(4,root.values[0].length());
-            if (stoi(num,0,10) > 7) {
+            if (stoi(num,0,10) > 3) {
                 std::cerr<<"Register allocation error,not enough a registers"<<std::endl;
             }
             reg_map[root.values[0]] = "$a"+num;
